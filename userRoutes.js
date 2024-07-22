@@ -29,7 +29,6 @@ router.get('/checkUser', async (req, res) => {
     }
 });
 
-
 router.get('/checkUserName', async (req, res) => {
     console.log('Received GET request on /checkUserName with query:', req.query);
     const db = req.app.locals.db;
@@ -90,8 +89,6 @@ router.post('/createUser', async (req, res) => {
 
 module.exports = router;
 
-
-
 router.get('/getUserData', async (req, res) => {
     console.log('Received GET request on /getUserData with query:', req.query);
     const db = req.app.locals.db;
@@ -123,8 +120,6 @@ router.get('/getUserData', async (req, res) => {
         res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 });
-
-
 
 // Updated yetiScoresLevel1 route to handle POST request
 router.post('/yetiScoresLevel1', async (req, res) => {
@@ -273,8 +268,6 @@ router.post('/updateWords', async (req, res) => {
         res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 });
-
-
 
 router.get('/getWords', async (req, res) => {
     console.log('Received GET request on /getWords with query:', req.query);
