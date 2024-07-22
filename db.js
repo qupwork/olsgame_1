@@ -9,10 +9,17 @@ let db;
 
 async function connectToDatabase() {
     console.log('connectToDatabase called'); // Log function call
-    console.log(process.env.MONGO_URI)
+
     if (db) return db; // Return existing connection if already connected
     try {
-        const client = new MongoClient(uri, { useUnifiedTopology: true });
+        const client = new MongoClient(uri, {
+                serverApi: {
+                    version: ServerApiVersion.v1,
+                    strict: true,
+                    deprecationErrors: true,
+                }
+            }
+        );
 
         await client.connect();
         console.log('Connected to MongoDB');
