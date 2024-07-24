@@ -28,7 +28,7 @@ async function startServer() {
         console.log('Database connected and routes initialized');
 
         app.listen(port, '0.0.0.0', () => {
-            console.log(`Server is running on http://localhost:${port}`);
+            console.log(`Server is running on http://0.0.0.0:${port}`);
         });
     } catch (err) {
         console.error('Failed to start server:', err);
